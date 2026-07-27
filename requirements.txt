@@ -1,0 +1,19 @@
+# Core Frameworks
+torch>=2.0.0
+torchvision>=0.15.0
+
+# Scientific Computing & Data Processing
+numpy>=1.22.0
+scipy>=1.8.0
+pandas>=1.4.0
+
+# Image & Video Processing
+Pillow>=9.0.0
+opencv-python>=4.5.0
+imageio>=2.15.0
+imageio-ffmpeg>=0.4.7
+
+# Visualisation & Experiment Tracking
+matplotlib>=3.5.0
+tqdm>=4.64.0
+wandb>=0.13.0
