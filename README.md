@@ -19,13 +19,6 @@ The progression below demonstrates the gradual learning of scene geometry and hi
 | **350** | <img src="assets/model_01/epochs_350_1.png" width="460" height = "250"/> | <img src="assets/model_01/epochs_350_2.png" width="460" height = "250"/> | **High-Frequency Detail Recovery**<br>• Fine spatial frequency recovery ($\gamma(\mathbf{x})$ mapping)<br>• Sharp boundary edges |
 | **500** | <img src="assets/model_01/epochs_500_1.png" width="460" height = "250"/> | <img src="assets/model_01/epochs_500_2.png" width="460" height = "250"/> | **Fully Converged Radiance Field**<br>• High-fidelity specular highlights & novel view synthesis<br>• Peak PSNR & SSIM metrics |
 
----
-
-## Training Curves
-
-| Total Training Loss | Coarse Network Loss | Fine Network Loss |
-|:-------------------:|:-------------------:|:-----------------:|
-| <img src="assets/model_01/metrics/train_loss_total.png" width="460" height = "250"/> | <img src="assets/model_01/metrics/train_loss_coarse.png" width="460" height = "250"/> | <img src="assets/model_01/metrics/train_loss_fine.png" width="460" height = "250"/> |
 
 ---
 
@@ -37,6 +30,14 @@ If a concise 3-stage summary table is preferred for the top section of the paper
 | :---: | :---: | :---: |
 | <img src="assets/model_01/epochs_50_1.png" width="450" height = "250"/> | <img src="assets/model_01/epochs_250_1.png" width="450" height = "250"/> | <img src="assets/model_01/epochs_500_1.png" width="450" height = "250"/> |
 | *Coarse spatial density learning* | *Texture & color refinement* | *High-fidelity view synthesis* |
+
+---
+
+## Training Curves
+
+| Total Training Loss | Coarse Network Loss | Fine Network Loss |
+|:-------------------:|:-------------------:|:-----------------:|
+| <img src="assets/model_01/metrics/train_loss_total.png" width="510" height = "350"/> | <img src="assets/model_01/metrics/train_loss_coarse.png" width="510" height = "350"/> | <img src="assets/model_01/metrics/train_loss_fine.png" width="510" height = "350"/> |
 
 ---
 
