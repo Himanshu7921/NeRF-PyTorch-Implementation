@@ -1,8 +1,25 @@
 # Neural Radiance Fields (NeRF) — PyTorch Implementation
 
-A clean, modular, from-scratch PyTorch implementation of **NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis** (Mildenhall et al., ECCV 2020).
+![Python](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white)
+![PyTorch](https://img.shields.io/badge/PyTorch-2.x-EE4C2C?logo=pytorch&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green.svg)
+![Status](https://img.shields.io/badge/Status-Active%20Development-orange)
+![Research](https://img.shields.io/badge/Research-Reproduction-blueviolet)
+![NeRF](https://img.shields.io/badge/Model-NeRF-5C6BC0)
+![CUDA](https://img.shields.io/badge/CUDA-12.x-76B900?logo=nvidia&logoColor=white)
+![W&B](https://img.shields.io/badge/Weights%20%26%20Biases-Tracked-FFBE00?logo=weightsandbiases&logoColor=black)
+![Dataset](https://img.shields.io/badge/Dataset-NeRF--Synthetic-blue)
+![Paper](https://img.shields.io/badge/Paper-ECCV%202020-red)
+![Stars](https://img.shields.io/github/stars/Himanshu7921/NeRF-PyTorch-Implementation?style=social)
+
+> **Note:** This is an ongoing research implementation and is not the final version of the repository.
+>
+> Future work includes implementing distributed training, extending experiments to the remaining **NeRF-Synthetic** datasets (Chair, Drums, Ficus, Hotdog, Materials, Mic, and Ship), and adding additional benchmarks, ablation studies, and performance optimizations.
+
+A PyTorch implementation of **NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis** (Mildenhall et al., ECCV 2020).
 
 This repository provides an end-to-end pipeline covering camera ray generation, positional encoding, hierarchical volume sampling (coarse and fine networks), and volumetric rendering for 3D scene reconstruction from 2D images.
+
 
 
 ## Qualitative Synthesis & Training Dynamics
