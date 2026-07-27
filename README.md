@@ -104,10 +104,9 @@ $$\hat{C}(\mathbf{r}) = \sum_{i=1}^{N} T_i \left( 1 - \exp(-\sigma_i \delta_i) \
 Clone the repository and install dependencies:
 
 ```bash
-git clone https://github.com/AbhinandanMandal/StyleRFPro/tree/main/NeRF
-cd Team-SHA/NeRF
+git clone https://github.com/Himanshu7921/NeRF-PyTorch-Implementation
+cd NeRF-PyTorch-Implementation
 pip install -r requirements.txt
-
 ```
 
 ### 2. Dataset Setup
