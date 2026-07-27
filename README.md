@@ -4,16 +4,6 @@ A clean, modular, from-scratch PyTorch implementation of **NeRF: Representing Sc
 
 This repository provides an end-to-end pipeline covering camera ray generation, positional encoding, hierarchical volume sampling (coarse and fine networks), and volumetric rendering for 3D scene reconstruction from 2D images.
 
----
-
-<!-- ## Stage-wise Qualitative Results
-
-| Initial Training (Epoch ~100) | Intermediate (Epoch ~300) | Final Rendering |
-| :---: | :---: | :---: |
-| <img src="assets/output_epoch_314.png" width="250"/> | <img src="assets/output_epoch_391.png" width="250"/> | <img src="assets/output_epoch_473.png" width="250"/> |
-| *Coarse geometry capture* | *Color & high-frequency detail refinement* | *Fully converged radiance field* |
-
---- -->
 
 ## Qualitative Synthesis & Training Dynamics
 
@@ -28,6 +18,14 @@ The progression below demonstrates the gradual learning of scene geometry and hi
 | **250** | <img src="assets/model_01/epochs_250_1.png" width="460" height = "250"/> | <img src="assets/model_01/epochs_250_2.png" width="460" height = "250"/> | **Color & Texture Synthesis**<br>• Albedo & diffuse color resolution<br>• Reduction in cloudiness/translucency |
 | **350** | <img src="assets/model_01/epochs_350_1.png" width="460" height = "250"/> | <img src="assets/model_01/epochs_350_2.png" width="460" height = "250"/> | **High-Frequency Detail Recovery**<br>• Fine spatial frequency recovery ($\gamma(\mathbf{x})$ mapping)<br>• Sharp boundary edges |
 | **500** | <img src="assets/model_01/epochs_500_1.png" width="460" height = "250"/> | <img src="assets/model_01/epochs_500_2.png" width="460" height = "250"/> | **Fully Converged Radiance Field**<br>• High-fidelity specular highlights & novel view synthesis<br>• Peak PSNR & SSIM metrics |
+
+---
+
+## Training Curves
+
+| Total Training Loss | Coarse Network Loss | Fine Network Loss |
+|:-------------------:|:-------------------:|:-----------------:|
+| <img src="assets/model_01/metrics/train_loss_total.png" width="460" height = "250"/> | <img src="assets/model_01/metrics/train_loss_coarse.png" width="460" height = "250"/> | <img src="assets/model_01/metrics/train_loss_fine.png" width="460" height = "250"/> |
 
 ---
 
