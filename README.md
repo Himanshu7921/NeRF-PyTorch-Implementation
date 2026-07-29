@@ -63,7 +63,7 @@ If a concise 3-stage summary table is preferred for the top section of the paper
 
 The Drums scene is considerably more challenging than Lego due to metallic reflections, thin structures, high-frequency textures, and strong view-dependent appearance. These characteristics make accurate geometry and radiance estimation significantly more difficult, requiring the model to learn complex lighting interactions and fine structural details.
 
-The results presented below were obtained after **500 training epochs**. While the reconstruction already captures the overall scene geometry and appearance, the Drums scene typically benefits from **1,000–1,400 training epochs**, leading to improved surface detail, sharper specular highlights, and higher-quality novel view synthesis. The current results therefore represent a partially converged model, with further training expected to improve reconstruction fidelity.
+> The results presented below were obtained after **500 training epochs**. While the reconstruction already captures the overall scene geometry and appearance, the Drums scene typically benefits from **1,000–1,400 training epochs**, leading to improved surface detail, sharper specular highlights, and higher-quality novel view synthesis. The current results therefore represent a partially converged model, with further training expected to improve reconstruction fidelity.
 
 ### Visual Progression Across Epochs
 
