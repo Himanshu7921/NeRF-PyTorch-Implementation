@@ -22,9 +22,18 @@ This repository provides an end-to-end pipeline covering camera ray generation, 
 
 
 
-## Qualitative Synthesis & Training Dynamics
+## Experimental Results
 
-The progression below demonstrates the gradual learning of scene geometry and high-frequency specularity across training epochs. Views are sampled across orthogonal camera positions to showcase spatial consistency.
+This implementation has been trained and evaluated on multiple scenes from the Synthetic NeRF Blender dataset.
+
+Current experiments include:
+
+- Lego
+- Drums
+
+The following sections demonstrate reconstruction quality and training progression for each scene independently.
+
+## Lego Scene
 
 ### Visual Progression Across Epochs
 
@@ -47,6 +56,86 @@ If a concise 3-stage summary table is preferred for the top section of the paper
 | :---: | :---: | :---: |
 | <img src="assets/model_01/epochs_50_1.png" width="450" height = "250"/> | <img src="assets/model_01/epochs_250_1.png" width="450" height = "250"/> | <img src="assets/model_01/epochs_500_1.png" width="450" height = "250"/> |
 | *Coarse spatial density learning* | *Texture & color refinement* | *High-fidelity view synthesis* |
+
+---
+
+## Drums Scene
+
+The Drums scene is considerably more challenging than Lego due to metallic reflections, thin structures, high-frequency textures, and strong view-dependent appearance. These characteristics make accurate geometry and radiance estimation significantly more difficult, requiring the model to learn complex lighting interactions and fine structural details.
+
+The results presented below were obtained after **500 training epochs**. While the reconstruction already captures the overall scene geometry and appearance, the Drums scene typically benefits from **1,000–1,400 training epochs**, leading to improved surface detail, sharper specular highlights, and higher-quality novel view synthesis. The current results therefore represent a partially converged model, with further training expected to improve reconstruction fidelity.
+
+### Visual Progression Across Epochs
+
+| Epoch | Camera View 1 | Camera View 2 | Reconstruction Stage |
+| :---: | :---: | :---: | :--- |
+| **30** | <img src="assets/model_03/epochs_50_1.png" width="460" height = "200"/> | <img src="assets/model_03/epochs_50_2.png" width="460" height = "200"/> | Initial geometry estimation |
+| **60** | <img src="assets/model_03/epochs_60_1.png" width="460" height = "200"/> | <img src="assets/model_03/epochs_60_2.png" width="460" height = "200"/> | Structural convergence |
+| **100** | <img src="assets/model_03/epochs_100_1.png" width="460" height = "200"/> | <img src="assets/model_03/epochs_100_2.png" width="460" height = "200"/> | Texture synthesis |
+| **460** | <img src="assets/model_03/epochs_460_1.png" width="460" height = "200"/> | <img src="assets/model_03/epochs_460_2.png" width="460" height = "200"/> | Fine detail recovery |
+| **500** | <img src="assets/model_03/epochs_500_1.png" width="460" height = "200"/> | <img src="assets/model_03/epochs_500_2.png" width="460" height = "200"/> | Final reconstruction |
+
+### Compact Summary
+
+| Stage 1 | Stage 2 | Stage 3 |
+| :---: | :---: | :---: |
+| <img src="assets/model_03/epochs_50_1.png" width="460" height = "200"/> | <img src="assets/model_03/epochs_460_2.png" width="460" height = "200"/> | <img src="assets/model_03/epochs_500_1.png" width="460" height = "200"/> |
+| *Initial Geometry* | *Texture Refinement* | *Final Novel View Synthesis* |
+
+---
+
+
+# Novel View Synthesis
+
+The following examples show novel view synthesis performed using trained checkpoints. Each rendered image was generated from camera poses unseen during training.
+
+## Lego
+| Prediction 1 | Prediction 2 |
+| :---: | :---: |
+| <img src = "assets/model_02/preds_1.png"/> | <img src="assets/model_02/preds_2.png"/> |
+
+| Prediction 3 | Prediction 4 |
+| :---: | :---: |
+| <img src="assets/model_02/preds_3.png"/> | <img src="assets/model_02/preds_4.png"/> |
+
+## Drums
+| Prediction 1 | Prediction 2 |
+| :---: | :---: |
+| <img src="assets/model_03/preds_1.png"/> | <img src="assets/model_03/preds_2.png"/> |
+
+| Prediction 3 | Prediction 4 |
+| :---: | :---: |
+| <img src="assets/model_03/preds_3.png"/> | <img src="assets/model_03/preds_1.png"/> |
+
+---
+
+# Training Configuration
+
+Unless otherwise stated, all experiments were performed using the following settings.
+
+| Parameter | Value |
+|-----------|------:|
+| Optimizer | Adam |
+| Learning Rate | 5e-4 |
+| Batch Size | 2 |
+| Training Rays | 1024 |
+| Coarse Samples | 64 |
+| Fine Samples | 128 |
+| Hidden Dimension | 256 |
+| Position Encoding Levels | 10 |
+| Direction Encoding Levels | 4 |
+| Epochs | 500 |
+
+--- 
+
+# Training Benchmarks
+
+The implementation was trained on multiple hardware configurations to evaluate memory usage and training performance.
+
+| GPU | VRAM | Dataset | Batch Size | Time / Epoch | Peak Memory |
+|------|------|----------|-----------:|-------------:|------------:|
+| RTX 3050 Laptop | 6 GB | Lego | 2 | 7.5 hrs | 5.9 GB |
+| T4 GPU | 16 GB | Drums | 2 | 5.2 hrs | 5.6 GB |
 
 ---
 
